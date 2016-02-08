@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Fundamental Functions</title>
+		<link rel="stylesheet" type="text/css" href="jQ_fund_styles.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+
+				$('#btn1').click(function(){
+					$('#addClass').addClass("red");
+				});
+				
+				$('#btn2').click(function(){
+					$('#append').append("<p>This is a new paragraph!</p>");
+				});
+
+				$('#drum').click(function(){
+					$('#ninja').hide();
+				});
+
+				$('#lamp').click(function(){
+					$('#genie').show();
+				});
+
+				$('#btn3').click(function(){
+					$('#ghost').toggle();
+				});
+
+				$('#carrot').click(function(){
+					$('#rabbit').before($('#carrot'));
+				});
+
+				$('#cart').click(function(){
+					$('#horse').after($('#cart'));
+				});
+
+				$('#btn4').click(function(){
+					$('#map').slideToggle();
+				});
+
+				$('#btn5').click(function(){
+					$('#waterfall').slideDown();
+				});
+
+				$('#btn6').click(function(){
+					$('#groundhog').slideUp();
+				});
+
+				$('#btn7').click(function(){
+					$('#puddle').fadeOut();
+				});
+
+				$('#btn8').click(function(){
+					$('#sun').fadeIn();
+				});
+
+				$('input').focus(function() {
+  					$( this ).next( "#dog_focused" ).css( "display", "inline" ).show();
+  					$(dog_run).hide();
+				});
+
+				$('#btn9').click(function(){
+					$('#missingTitle').html("<h1>HTML</h1>")
+				})
+
+				$('#btn10').click(function(){
+					$('#changeMe').text("This is new!")
+				})
+
+
+				$('#btn11').click(function(){
+					$('#daisy').attr("title", "Ray, a spot of golden sun!")
+				})
+
+				$('#nameBox').keyup(function() {
+    				var value = $(this).val();
+    				$('#nombre').text( value );
+    				})
+    				.keyup();
+			});
+		</script>
+
+		<style>
+			.red{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Add Class</h1>
+			<button id="btn1">.addClass</button>
+			<p>Click the button to add class <span id="addClass">"red"</span> to this paragraph!</p>
+		</div>
+		<div>
+			<h1>Append</h1>
+			<button id="btn2">.append</button>
+			<p>Click the button to append a new paragraph!</p>
+			<p id="append" style="display: block"></p>
+		</div>
+		<div>
+			<h1>Hide</h1>
+			<img id="drum" src="drum.png">
+			<p>Click the drum to hide the ninja!</p>
+			<img id="ninja" src="ninja.png">
+		</div>
+		<div>
+			<h1>Show</h1>
+			<p>Click the lamp to show the genie!</p>
+			<img id="lamp" src="lamp.jpg">
+			<img id="genie" style="display: none" src="genie.png">
+		</div>
+		<div>
+			<h1>Toggle</h1>
+			<button id="btn3">ahh!</button>
+			<p>Click the button to toggle the ghost!</p>
+			<img id="ghost" style="display: none" src="ghost.png">
+		</div>
+		<div>
+			<h1>Before</h1>
+			<img id="carrot" src="carrot.png">
+			<p>Click the carrot to put it before the rabbit!</p>
+			<img id="rabbit" src="rabbit.jpg">
+		</div>
+		<div>
+			<h1>After</h1>
+			<p>Click the cart to put it after the horse!</p>
+			<img id="cart" src="cart.png">
+			<img id="horse" src="horse.png">
+		</div>
+		<div>
+			<h1>Slide Toggle</h1>
+			<button id="btn4">.slideToggle</button>
+			<p>Click the button to slide toggle the map!</p>
+			<img id="map" src="map.png">
+		</div>
+		<div>
+			<h1>Slide Down</h1>
+			<button id="btn5">.slideDown</button>
+			<p>Click the button to slide down the waterfall!</p>
+			<img id="waterfall" style="display: none" src="waterfall.png">
+		</div>
+		<div>
+			<h1>Slide Up</h1>
+			<button id="btn6">.slideUp</button>
+			<p>Click the button to slide up the groundhog!</p>
+			<img id="groundhog" src="groundhog.png">
+		</div>
+		<div>
+			<h1>Fade Out</h1>
+			<button id="btn7">.fadeOut</button>
+			<p>Click the button to fade out the puddle!</p>
+			<img id="puddle" src="puddle.png">
+		</div>
+		<div>
+			<h1>Fade In</h1>
+			<button id="btn8">.fadeIn</button>
+			<p>Click the button to fade in the sun!</p>
+			<img id="sun" style="display: none" src="sun.png">
+		</div>
+		<div>
+			<h1>Focus</h1>
+			<p>Click in the textbox to focus the dog's attention!</p>
+			<p><input type="text"> <img id="dog_focused" style="display: none" src="dog_focused.png">
+			<img id="dog_run" src="dog_run.png">
+		</div>
+		<div>
+			<span id="missingTitle"></span>
+			<button id="btn9">.html</button>
+			<p>The html code for this section's title is missing! Click the button to add it!</p>
+		</div>
+		<div>
+			<h1>Text</h1>
+			<button id="btn10">.text</button>
+			<p id="changeMe">Click the button to change this message to something new!</p>
+		</div>
+		<div>
+			<h1>Attribute</h1>
+			<button id="btn11">.attr</button>
+			<img id="daisy" title="Doe, a deer, a female deer..." src="daisy.png">
+			<p>Hover your mouse over the daisy to see what she's singing. Click the button to change to change it!</p>
+		</div>
+		<div>
+			<h1>Value</h1>
+			<p>Want to know how to tell someone who you are in Spanish? Write your name in the box, then read the sentence below!</p>
+			<input type="text" id="nameBox" style="display: block">
+			<p style="display: block">Me llamo <span id="nombre"></span>.</p>
+		</div>
+	</body>
+</html>
